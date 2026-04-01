@@ -5,7 +5,7 @@ import MenuClient from "./MenuClient";
 export const metadata: Metadata = {
   title: "Menu",
   description:
-    "Full menu at Elgin Public House — Angus beef burgers, Wagyu & Quad Burger, wings, craft sandwiches, salads, and more. Kitchen open 'til midnight every night.",
+    "Full menu at Elgin Public House — Angus beef burgers, Wagyu & Quad Burger, wings, craft sandwiches, tacos, entrees, and more. Kitchen open 'til midnight every night.",
 };
 
 const menuData = {
@@ -14,28 +14,28 @@ const menuData = {
     tagline: "Start your meal right",
     items: [
       {
-        name: "Bacon Cheddar & Chive Stuffed Tater Tots",
-        desc: "Served with sour cream",
+        name: "Loaded Tater Tots",
+        desc: "Bacon cheddar and chive stuffed tater tots with sour cream",
         img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400&q=75",
       },
       {
-        name: "Warm Garlic Buttered Soft Pretzel Bites",
-        desc: "Served with mustard trio",
+        name: "Pretzel Bites",
+        desc: "Warm garlic buttered soft pretzel bites with mustard trio",
         img: "https://images.unsplash.com/photo-1603532648955-039310d9ed75?w=400&q=75",
       },
       {
-        name: "Slider Trio",
-        desc: "Choose combination of three, on Turano mini pretzel rolls",
+        name: "Slider Sampler",
+        desc: "Choose a combination of three, on Turano mini pretzel rolls",
         img: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&q=75",
       },
       {
-        name: "Fajita Quesadilla",
-        desc: "Grilled chicken, mushrooms, onions, bell peppers, chihuahua cheese on corn tortillas with guacamole and sour cream",
+        name: "Chicken Quesadillas",
+        desc: "Grilled chicken, mushrooms, onions, bell peppers, chihuahua cheese on corn tortillas with house-made guacamole and sour cream",
         img: "https://images.unsplash.com/photo-1618040996337-56904b7850b9?w=400&q=75",
       },
       {
         name: "Wings",
-        desc: "6 or 12 — Tequila Lime, Peach Jerk, BBQ, Busted Knee Hot Sauce, Garlic Parmesan, Mild or Hot Buffalo",
+        desc: "6 or 12 count. Sauces: Tequila Lime, Peach Jerk, BBQ, Busted Knee Hot Sauce, Garlic Parmesan, Mild or Hot Buffalo",
         img: "https://images.unsplash.com/photo-1608039829572-9b0ba7a91f24?w=400&q=75",
       },
       {
@@ -44,253 +44,150 @@ const menuData = {
         img: "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=400&q=75",
       },
       {
-        name: "Cheese Curds",
+        name: "Onion Rings",
         desc: "Beer battered in-house with bacon aioli",
-        img: "https://images.unsplash.com/photo-1531749668029-2db88e4276c7?w=400&q=75",
+        img: "https://images.unsplash.com/photo-1639024471283-03518883512d?w=400&q=75",
       },
       {
-        name: "Chicken Tenders",
-        desc: "6 strips — Breaded chicken breast with choice of dressing",
+        name: "Chicken Strips",
+        desc: "Six strips of breaded chicken breast with choice of dressing",
         img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=75",
       },
       {
-        name: "Fish & Chips Bites",
-        desc: "Beer battered with spicy avocado ranch",
-        img: "https://images.unsplash.com/photo-1579208030886-b1f5b6b6086d?w=400&q=75",
-      },
-      {
-        name: "Portabella Strips",
-        desc: "Beer battered with spicy ranch",
-        img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=75",
-      },
-      {
-        name: "Baked Goat Cheese",
-        desc: "In marinara with warm toasted pita",
-        price: "$8.75",
-        img: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400&q=75",
-      },
-      {
-        name: "Margarita Shrimp",
-        desc: "Pan-seared in margarita mix, garlic, cilantro, lime (GF)",
-        price: "$9.75",
-        img: "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=400&q=75",
-      },
-      {
-        name: "Cajun Shrimp",
-        desc: "Cajun seasoned, pan-seared in margarita mix (GF)",
-        price: "$9.75",
-        img: "https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=400&q=75",
-      },
-      {
-        name: "Chips and Salsa",
-        desc: "Tri-colored corn chips with fire-roasted salsa",
-        price: "$6.75",
-        img: "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?w=400&q=75",
-      },
-      {
-        name: "Chips & Guacamole",
-        desc: "Fresh guac made to order",
-        price: "$8.00",
-        img: "https://images.unsplash.com/photo-1600335895229-6e75511892c8?w=400&q=75",
-      },
-      {
-        name: "Bruschetta",
-        desc: "Toasted ciabatta, house-made bruschetta",
-        price: "$8.75",
-        img: "https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=400&q=75",
-      },
-      {
         name: "Fried Pickles",
-        desc: "Dill pickle spears with EPH horseradish thousand island",
-        price: "$7.75",
+        desc: "Beer battered in-house with spicy avocado ranch",
         img: "https://images.unsplash.com/photo-1619221882266-c3eb7eedb2e4?w=400&q=75",
       },
       {
-        name: "Pub Burgers",
-        desc: "Three mini angus beef burgers with pickles and EPH horseradish thousand island",
-        price: "$8.25",
-        img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=75",
-      },
-      {
-        name: "Hummus Duo",
-        desc: "Southwest black bean & eggplant with pita",
-        price: "$7.75",
-        img: "https://images.unsplash.com/photo-1637361973-1d80b900257c?w=400&q=75",
+        name: "Cheese Curds",
+        desc: "Beer battered in-house with spicy ranch",
+        img: "https://images.unsplash.com/photo-1531749668029-2db88e4276c7?w=400&q=75",
       },
     ],
   },
-  soups: {
-    label: "Soups",
-    tagline: "Warm & comforting",
-    items: [
-      {
-        name: "Soup of the Day",
-        desc: "Ask your server for today's selection",
-        price: "$4.50",
-        img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&q=75",
-      },
-      {
-        name: "Chicken Chili",
-        desc: "Topped with cheddar, sour cream, green onion",
-        price: "$4.75",
-        img: "https://images.unsplash.com/photo-1612966809256-95c0b1a24de5?w=400&q=75",
-      },
-      {
-        name: "Chili",
-        desc: "Topped with cheddar, sour cream, green onion",
-        price: "$4.75",
-        img: "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=400&q=75",
-      },
-    ],
-  },
-  salads: {
-    label: "Salads",
+  soups_salads: {
+    label: "Soups & Salads",
     tagline: "Fresh & crisp",
     items: [
       {
-        name: "Pub Salad",
-        price: "$4.25",
-        desc: "House salad with fresh greens",
+        name: "Southwest Chicken Salad",
+        desc: "Grilled chicken, avocado, pico, black bean-corn salsa, chihuahua cheese, tortilla strips, jalapeno vinaigrette",
         img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=75",
       },
       {
-        name: "Chopped Salad",
-        desc: "Mixed greens, cucumber, red onion, tomato, red pepper, egg, ham, turkey, swiss, cheddar",
-        price: "$10.25",
+        name: "Steakhouse Salad",
+        desc: "Sliced ribeye, mixed greens, blue cheese, hard boiled egg, caramelized onions, tomatoes, homemade ranch",
+        img: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=400&q=75",
+        featured: true,
+      },
+      {
+        name: "Corned Beef Cobb",
+        desc: "Corned beef, blue cheese, bacon, hardboiled egg, tomato, red onion, cucumber, cucumber vinaigrette",
         img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&q=75",
       },
       {
-        name: "Spinach Salad",
-        desc: "Baby spinach, mushrooms, bacon, sesame-thai, red pepper, egg, goat cheese",
-        price: "$9.75",
+        name: "Mediterranean Salad",
+        desc: "Chicken, feta, artichokes, Kalamata olives, cucumbers, tomatoes, red onions, oregano lemon vinaigrette",
         img: "https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?w=400&q=75",
       },
       {
-        name: "Tuna Salad",
-        price: "$8.25",
-        desc: "Fresh tuna salad on a bed of greens",
+        name: "Caesar Salad",
+        desc: "Crispy romaine, shredded Parmesan, Caesar dressing, garlic croutons. Add protein.",
         img: "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400&q=75",
       },
       {
-        name: "EPH Cobb Salad",
-        desc: "Grilled chicken, grape tomato, dried sweet corn, couscous, bleu cheese, trail mix",
-        price: "$10.95",
-        img: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=400&q=75",
-      },
-      {
-        name: "Grilled Chicken Salad",
-        price: "$9.75",
-        desc: "Grilled chicken breast on mixed greens",
+        name: "Chef Salad",
+        desc: "Mixed greens, cucumber, red onion, tomatoes, red peppers, hardboiled egg, ham, turkey, chihuahua cheese",
         img: "https://images.unsplash.com/photo-1604497181015-76590d828b75?w=400&q=75",
       },
       {
-        name: "Grilled Ahi Salad",
-        desc: "Ruby red ahi tuna, seared medium rare",
-        price: "$14.00",
-        img: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=400&q=75",
-      },
-      {
-        name: "Bruschetta Salad",
-        desc: "Fresh mozzarella, diced prosciutto",
-        price: "$10.95",
-        img: "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=400&q=75",
-      },
-      {
-        name: "The EPH Wedge",
-        desc: "Grilled chicken, bacon, bleu cheese, onion crisps",
-        price: "$10.95",
-        img: "https://images.unsplash.com/photo-1551248429-40975aa4de74?w=400&q=75",
-      },
-      {
-        name: "The Wedge",
-        price: "$7.50",
-        desc: "Classic iceberg wedge salad",
-        img: "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=400&q=75",
+        name: "Homemade Soups",
+        desc: "Three varieties, seasonal — ask your server for today's selections",
+        img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&q=75",
       },
     ],
   },
   burgers: {
     label: "Burgers",
-    tagline: "8oz Angus Beef on pretzel rolls, choice of side",
-    note: "Substitute: Wagyu beef or Quad (Beef, Elk, Bison, Boar). Non-beef: Grilled Chicken, Fried Chicken, Beyond Patty",
+    tagline: "8oz Angus beef on pretzel roll, choice of side",
+    note: "Premium Upgrades: Wagyu Beef or Quad (Beef, Elk, Bison, Boar). Non-Beef: Grilled Chicken, Fried Chicken, Beyond Patty. Sides: Fries, Chips, Onion Straws, Soup or Salad.",
     items: [
       {
-        name: "Mac Daddy",
-        desc: "Crispy pork belly, mac and cheese, fried jalapeños",
+        name: "The Pork Belly Mac",
+        desc: "Crispy pork belly, creamy mac and cheese, fried jalapenos",
         img: "https://images.unsplash.com/photo-1586816001966-79b736744398?w=400&q=75",
         featured: true,
       },
       {
-        name: "Sweet Whiskey",
-        desc: "Cheddar, lettuce, bourbon bacon caramelized onion mushroom sauce on brioche",
+        name: "Sweet Whiskey Burger",
+        desc: "Cheddar, house-made sweet whiskey sauce (bourbon, applewood bacon, caramelized onions, mushrooms) on brioche",
         img: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=400&q=75",
       },
       {
-        name: "French Onion",
-        desc: "Gouda, gruyere, fontina, grilled onions, onion straws, onion kaiser, side of au jus",
+        name: "French Onion Burger",
+        desc: "Smothered in gouda, gruyere and fontina cheeses, grilled onions, crispy onion straws on onion kaiser roll with au jus",
         img: "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=400&q=75",
         featured: true,
       },
       {
-        name: "BBQ Pork Belly",
+        name: "BBQ Pork Belly Burger",
         desc: "Sharp cheddar, BBQ glazed pork belly, onion straws, BBQ sauce",
         img: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=400&q=75",
       },
       {
-        name: "Breakfast Burger",
-        desc: "Bacon, sharp cheddar, grilled onions, fried egg",
+        name: "Sunrise Burger",
+        desc: "Applewood smoked bacon, sharp cheddar, grilled onions, fried egg",
         img: "https://images.unsplash.com/photo-1550317138-10000687a72b?w=400&q=75",
       },
       {
-        name: "Southwest",
-        desc: "Pepperjack, guacamole, fresh jalapeños, pico de gallo",
+        name: "Southwest Burger",
+        desc: "Pepperjack, guacamole, fresh jalapenos, pico de gallo",
         img: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=400&q=75",
       },
       {
         name: "Black Bean Burger",
-        desc: "Roasted bell peppers, corn, pico, chimichurri, feta",
+        desc: "Homemade with roasted bell peppers and corn, pico, chimichurri, feta",
         img: "https://images.unsplash.com/photo-1520072959219-c595e6cdc926?w=400&q=75",
       },
     ],
   },
   sandwiches: {
     label: "Sandwiches",
-    tagline: "Choice of chips, fries, onion straws, soup or salad",
+    tagline: "Choice of chips, fries, onion straws, soup, or small salad",
     items: [
       {
-        name: "Buffalo Chicken",
-        desc: "8oz fried chicken, buffalo, spicy slaw, fresh jalapeños, bleu cheese on brioche",
+        name: "Buffalo Chicken Sandwich",
+        desc: "8oz breaded fried chicken, mild buffalo, spicy slaw, jalapenos, blue cheese on brioche",
         img: "https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=400&q=75",
       },
       {
-        name: "Chicken Artichoke",
-        desc: "Artichokes, roasted bell peppers, onions, provolone, pesto",
+        name: "Artichoke Chicken Melt",
+        desc: "Chicken, artichokes, roasted bell peppers, onions, provolone, pesto",
         img: "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400&q=75",
       },
       {
         name: "Brie & Apple",
-        desc: "Creamy brie, Granny Smith apples, apricot jam",
+        desc: "Creamy Brie, Granny Smith apples, apricot jam",
         img: "https://images.unsplash.com/photo-1528736235302-52922df5c122?w=400&q=75",
       },
       {
-        name: "Steak Sandwich",
-        desc: "Grilled ribeye on ciabatta, horseradish-dijon, caramelized onions, mixed greens",
+        name: "Philly Steak",
+        desc: "Grilled ribeye on ciabatta garlic bread, horseradish-dijon, caramelized onions, mixed greens",
         img: "https://images.unsplash.com/photo-1432139509613-5c4255a1d1f3?w=400&q=75",
-        featured: true,
       },
       {
         name: "Cubano",
-        desc: "Slow roasted pork, smoked ham, swiss, pickles, red onions, mustard, garlic aioli",
+        desc: "Slow roasted pork shoulder, smoked ham, swiss, pickles, red onions, whole grain mustard, garlic aioli",
         img: "https://images.unsplash.com/photo-1539252554453-80ab65ce3586?w=400&q=75",
       },
       {
         name: "Fried Shrimp Po'Boy",
-        desc: "8 jumbo shrimp, lettuce, tomato, red onion, dijon, garlic aioli on ciabatta",
+        desc: "8 jumbo breaded shrimp, lettuce, tomato, red onion, dijon, garlic aioli on ciabatta",
         img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=75",
       },
       {
         name: "Turkey Club",
-        desc: "Smoked turkey, bacon, swiss, honey-mustard on pretzel roll",
+        desc: "Smoked turkey, applewood bacon, swiss, lettuce, tomato, honey-mustard on pretzel roll",
         img: "https://images.unsplash.com/photo-1567234669003-dce7a7a88821?w=400&q=75",
       },
       {
@@ -298,39 +195,103 @@ const menuData = {
         desc: "Slow roasted, onion straws, mild BBQ on pretzel roll",
         img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&q=75",
       },
-    ],
-  },
-  pastas: {
-    label: "Pastas",
-    tagline: "Hearty & satisfying",
-    items: [
       {
-        name: "EPH Mac & Cheese",
-        desc: "Corkscrew pasta in homemade cheese sauce",
-        price: "$8.00",
-        img: "https://images.unsplash.com/photo-1543339494-b4cd4f7ba686?w=400&q=75",
+        name: "Triple Grilled Cheese",
+        desc: "Provolone, American, chihuahua cheeses, tomatoes, bacon. Staff favorite! Add fried egg!",
+        img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&q=75",
+        featured: true,
       },
       {
-        name: "Chipotle Penne",
-        desc: "Diced chicken, garlic, cilantro, chipotle alfredo",
-        price: "$14.95",
+        name: "Loaded Philly",
+        desc: "Grilled ribeye, sauteed onions, breaded fried potatoes, provolone, sour cream, bacon on caramelized onion bun",
+        img: "https://images.unsplash.com/photo-1513185158878-8d8c2a2a3da3?w=400&q=75",
+      },
+      {
+        name: "Steak Melt",
+        desc: "Thick cut sourdough, sliced filet, caramelized onions, American, chihuahua, tomatoes",
+        img: "https://images.unsplash.com/photo-1475090169767-40ed8d18f67d?w=400&q=75",
+        featured: true,
+      },
+      {
+        name: "BLT Deluxe",
+        desc: "Double stacked with applewood bacon, white cheddar, American, sun-dried tomato mayo",
+        img: "https://images.unsplash.com/photo-1619096252214-ef06c45683e3?w=400&q=75",
+      },
+      {
+        name: "Cajun Chicken Wrap",
+        desc: "Grilled adobo chicken, onions, jalapenos, andouille sausage, pepperjack, spicy ranch, mixed greens",
+        img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&q=75",
+      },
+      {
+        name: "Buffalo Chicken Wrap",
+        desc: "Fried chicken in buffalo sauce, blue cheese crumbles, celery, tomatoes, mixed greens, ranch",
+        img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400&q=75",
+      },
+    ],
+  },
+  tacos: {
+    label: "Tacos",
+    tagline: "Handmade & bursting with flavor",
+    items: [
+      {
+        name: "Fish Tacos",
+        desc: "Sauteed East Coast cod, cabbage, pico, avocado, corn & black bean salsa, jalapeno vinaigrette",
+        img: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=400&q=75",
+      },
+      {
+        name: "Pork Belly Tacos",
+        desc: "Slow roasted pork belly, jalapeno-maple BBQ glaze, shaved cabbage, grilled peaches, chipotle pepper sauce",
+        img: "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=400&q=75",
+        featured: true,
+      },
+      {
+        name: "Carnitas Tacos",
+        desc: "Three shredded pork tacos with chihuahua cheese, cabbage, pico",
+        img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=75",
+      },
+      {
+        name: "Steak Tacos",
+        desc: "Strip steak, grilled onions, refried beans, mixed greens, pico, lime crema",
+        img: "https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?w=400&q=75",
+      },
+    ],
+  },
+  entrees: {
+    label: "Entrees",
+    tagline: "Hearty plates, made from scratch",
+    items: [
+      {
+        name: "Cajun Cod",
+        desc: "East Coast cod fried with Cajun seasoning, fried brussel sprouts, crispy potatoes",
+        img: "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?w=400&q=75",
+      },
+      {
+        name: "Cajun Etouffee",
+        desc: "New Orleans style with shrimp, chicken, andouille sausage over rice",
+        img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=75",
+        featured: true,
+      },
+      {
+        name: "Chimichurri Steak",
+        desc: "Black Angus filet grilled, sliced, house chimichurri, teriyaki mushrooms, red potatoes",
+        img: "https://images.unsplash.com/photo-1558030006-450675393462?w=400&q=75",
+        featured: true,
+      },
+      {
+        name: "Fried Catfish",
+        desc: "Three beer-battered filets with fries and coleslaw",
+        img: "https://images.unsplash.com/photo-1579208030886-b1f5b6b6086d?w=400&q=75",
+      },
+      {
+        name: "Cajun Pasta",
+        desc: "Rigatoni with andouille, tomatoes, feta in cajun cream sauce",
         img: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400&q=75",
       },
-    ],
-  },
-  enhancements: {
-    label: "Enhancements",
-    tagline: "Make it your own",
-    items: [
-      { name: "Applewood Bacon", price: "$1.75", desc: "Smoky, thick-cut" },
-      { name: "BBQ Pulled Pork", price: "$4.50", desc: "Slow-roasted" },
-      { name: "Grilled Onions", price: "$0.75", desc: "Caramelized" },
-      { name: "Green Chilis", price: "$0.75", desc: "Mild heat" },
-      { name: "Extra Patty", price: "$4.50", desc: "8oz Angus beef" },
-      { name: "Duck Bacon", price: "$4.50", desc: "Rich & savory" },
-      { name: "Soft-Fried Egg", price: "$1.75", desc: "Runny yolk" },
-      { name: "Sautéed Mushrooms", price: "$0.75", desc: "Tender & earthy" },
-      { name: "Jalapeños", price: "$0.75", desc: "Fresh sliced" },
+      {
+        name: "Mac & Cheese",
+        desc: "Cavatappi with homemade cheese sauce, crumbled bacon. Many add-ons available",
+        img: "https://images.unsplash.com/photo-1543339494-b4cd4f7ba686?w=400&q=75",
+      },
     ],
   },
 };
@@ -358,7 +319,7 @@ export default function MenuPage() {
             </h1>
             <p className="text-cream/80 text-base sm:text-lg max-w-2xl mx-auto">
               From signature Angus burgers to exotic Quad patties, craft
-              sandwiches to hearty salads — all served until midnight, every
+              sandwiches to house-made tacos — all served until midnight, every
               night.
             </p>
           </AnimatedSection>

@@ -92,8 +92,8 @@ const jsonLd = {
   priceRange: "$$",
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "4.3",
-    reviewCount: "631",
+    ratingValue: "4.4",
+    reviewCount: "2157",
     bestRating: "5",
   },
   menu: "https://elginpublichouse.com/menu",
@@ -112,7 +112,7 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
         />
       </head>
       <body className="min-h-full flex flex-col">

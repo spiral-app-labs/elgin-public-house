@@ -22,12 +22,11 @@ type MenuData = Record<string, MenuCategory>;
 
 const categoryKeys = [
   "appetizers",
-  "soups",
-  "salads",
+  "soups_salads",
   "burgers",
   "sandwiches",
-  "pastas",
-  "enhancements",
+  "tacos",
+  "entrees",
 ];
 
 export default function MenuClient({ menuData }: { menuData: MenuData }) {
@@ -72,82 +71,54 @@ export default function MenuClient({ menuData }: { menuData: MenuData }) {
                 )}
               </AnimatedSection>
 
-              {/* Enhancements grid - simple chip layout */}
-              {key === "enhancements" ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                  {cat.items.map((item, i) => (
-                    <AnimatedSection
-                      key={item.name}
-                      animation="animate-fade-up"
-                      delay={`delay-${Math.min((i + 1) * 100, 600)}`}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                {cat.items.map((item, i) => (
+                  <AnimatedSection
+                    key={item.name}
+                    animation="animate-fade-up"
+                    delay={`delay-${Math.min((i % 6 + 1) * 100, 600)}`}
+                  >
+                    <div
+                      className={`bg-white rounded-lg overflow-hidden shadow-sm menu-item h-full flex flex-col ${
+                        item.featured
+                          ? "ring-2 ring-copper/30"
+                          : ""
+                      }`}
                     >
-                      <div className="bg-white rounded-lg px-5 py-4 flex items-center justify-between shadow-sm menu-item">
-                        <div>
-                          <span className="text-navy font-semibold text-sm">
+                      {item.img && (
+                        <div className="relative overflow-hidden aspect-[16/10]">
+                          <img
+                            src={item.img}
+                            alt={item.name}
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                          />
+                          {item.featured && (
+                            <span className="absolute top-3 right-3 bg-copper text-cream text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
+                              Popular
+                            </span>
+                          )}
+                        </div>
+                      )}
+                      <div className="p-4 sm:p-5 flex flex-col flex-1">
+                        <div className="flex items-start justify-between gap-2">
+                          <h3 className="text-navy font-bold text-base leading-tight">
                             {item.name}
-                          </span>
-                          <span className="text-navy/40 text-xs ml-2">
-                            {item.desc}
-                          </span>
+                          </h3>
+                          {item.price && (
+                            <span className="text-copper font-bold text-sm whitespace-nowrap">
+                              {item.price}
+                            </span>
+                          )}
                         </div>
-                        <span className="text-copper font-bold text-sm ml-4">
-                          {item.price}
-                        </span>
+                        <p className="text-navy/50 text-sm mt-1.5 leading-relaxed flex-1">
+                          {item.desc}
+                        </p>
                       </div>
-                    </AnimatedSection>
-                  ))}
-                </div>
-              ) : (
-                /* Regular menu grid */
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                  {cat.items.map((item, i) => (
-                    <AnimatedSection
-                      key={item.name}
-                      animation="animate-fade-up"
-                      delay={`delay-${Math.min((i % 6 + 1) * 100, 600)}`}
-                    >
-                      <div
-                        className={`bg-white rounded-lg overflow-hidden shadow-sm menu-item h-full flex flex-col ${
-                          item.featured
-                            ? "ring-2 ring-copper/30"
-                            : ""
-                        }`}
-                      >
-                        {item.img && (
-                          <div className="relative overflow-hidden aspect-[16/10]">
-                            <img
-                              src={item.img}
-                              alt={item.name}
-                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                              loading="lazy"
-                            />
-                            {item.featured && (
-                              <span className="absolute top-3 right-3 bg-copper text-cream text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
-                                Popular
-                              </span>
-                            )}
-                          </div>
-                        )}
-                        <div className="p-4 sm:p-5 flex flex-col flex-1">
-                          <div className="flex items-start justify-between gap-2">
-                            <h3 className="text-navy font-bold text-base leading-tight">
-                              {item.name}
-                            </h3>
-                            {item.price && (
-                              <span className="text-copper font-bold text-sm whitespace-nowrap">
-                                {item.price}
-                              </span>
-                            )}
-                          </div>
-                          <p className="text-navy/50 text-sm mt-1.5 leading-relaxed flex-1">
-                            {item.desc}
-                          </p>
-                        </div>
-                      </div>
-                    </AnimatedSection>
-                  ))}
-                </div>
-              )}
+                    </div>
+                  </AnimatedSection>
+                ))}
+              </div>
             </div>
           );
         })}

@@ -85,7 +85,7 @@ export default function Footer() {
             reserved.
           </p>
           <div className="flex items-center gap-2">
-            <span className="text-cream/30 text-xs">4.3</span>
+            <span className="text-cream/30 text-xs">4.4</span>
             <div className="flex gap-0.5">
               {[1, 2, 3, 4].map((i) => (
                 <svg

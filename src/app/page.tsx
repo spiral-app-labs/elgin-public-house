@@ -5,19 +5,19 @@ import StarRating from "@/components/StarRating";
 
 const reviews = [
   {
-    text: "This is and has been a good community place for food and beverage. They sponsor different events like plays upstairs. Not your cookie cutter atmosphere and that is a huge plus.",
+    text: "We go to the pub at least once a month — love the food, service and atmosphere! Our favorite go-to place for relaxing atmosphere and amazing service and always great food!",
     source: "TripAdvisor",
     color: "bg-green-600",
   },
   {
-    text: "Great Food. Great Drinks. Extensive beer list, specialty martinis, wide variety of whiskeys, vodkas, wines, and ports. Great Service. Friendly knowledgeable staff.",
+    text: "Greg has put together a fantastic menu for all to enjoy. Great Drinks. Extensive beer list, specialty martinis, wide variety of whiskeys, vodkas, wines, and ports. Friendly knowledgeable staff.",
     source: "Yelp",
     color: "bg-red-600",
   },
   {
-    text: "A cozy restaurant decorated nicely with brass fixtures and glass bar back.",
-    source: "Yelp",
-    color: "bg-red-600",
+    text: "Best burgers in town! Great bar to get drinks and watch sports. The chicken sandwich was pretty good too.",
+    source: "Google",
+    color: "bg-blue-600",
   },
 ];
 
@@ -129,18 +129,33 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Kitchen Open til Midnight Banner */}
+      <section className="bg-copper py-3 sm:py-4">
+        <div className="mx-auto max-w-5xl px-4 flex items-center justify-center gap-3">
+          <svg className="w-5 h-5 sm:w-6 sm:h-6 text-cream" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span className="text-cream font-bold text-sm sm:text-base tracking-wide uppercase">
+            Kitchen Open &apos;til Midnight — Every Single Night
+          </span>
+          <svg className="w-5 h-5 sm:w-6 sm:h-6 text-cream" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+      </section>
+
       {/* Stats Bar */}
       <section className="bg-navy py-8 sm:py-10">
         <div className="mx-auto max-w-5xl px-4 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
           <div>
             <div className="text-copper text-3xl sm:text-4xl font-bold">
-              <Counter end={4} suffix=".3" />
+              <Counter end={4} suffix=".4" />
             </div>
             <div className="text-cream/50 text-xs sm:text-sm mt-1">Google Rating</div>
           </div>
           <div>
             <div className="text-copper text-3xl sm:text-4xl font-bold">
-              <Counter end={631} suffix="+" />
+              <Counter end={2157} suffix="+" />
             </div>
             <div className="text-cream/50 text-xs sm:text-sm mt-1">Yelp Reviews</div>
           </div>
@@ -229,6 +244,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Staff Favorite */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <AnimatedSection>
+              <div className="relative rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=800&q=80"
+                  alt="Triple Grilled Cheese — Staff Favorite"
+                  className="w-full aspect-[4/3] object-cover"
+                />
+                <div className="absolute top-4 left-4 bg-copper text-cream text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded">
+                  Staff Favorite
+                </div>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection animation="animate-slide-in-right">
+              <p className="text-copper text-sm tracking-[0.2em] uppercase mb-3">
+                You Have to Try This
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">
+                The Triple Grilled Cheese
+              </h2>
+              <p className="text-navy/70 text-base sm:text-lg leading-relaxed mb-6">
+                Provolone, American, and chihuahua cheeses with tomatoes and
+                bacon — our staff&apos;s go-to order. Add a fried egg and thank
+                us later. This isn&apos;t your childhood grilled cheese.
+              </p>
+              <Link
+                href="/menu"
+                className="inline-block bg-navy hover:bg-navy-light text-cream px-8 py-4 rounded text-base font-semibold tracking-wide transition-all"
+              >
+                See Full Menu
+              </Link>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
       {/* Reviews */}
       <section className="py-16 sm:py-24 bg-cream">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -240,9 +294,9 @@ export default function Home() {
               Loved by the Community
             </h2>
             <div className="flex items-center justify-center gap-3">
-              <StarRating rating={4.3} size="w-6 h-6" />
+              <StarRating rating={4.4} size="w-6 h-6" />
               <span className="text-navy/60 text-sm">
-                4.3 stars &middot; 631+ reviews
+                4.4 stars &middot; 2,157+ reviews
               </span>
             </div>
           </AnimatedSection>
