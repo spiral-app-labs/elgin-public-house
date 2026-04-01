@@ -294,6 +294,69 @@ const menuData = {
       },
     ],
   },
+  kids: {
+    label: "Kids Menu",
+    tagline: "For our younger guests (12 & under)",
+    items: [
+      {
+        name: "Kid Burger",
+        desc: "Grilled beef patty on a bun with fries",
+        img: "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=400&q=75",
+      },
+      {
+        name: "Kid Cheeseburger",
+        desc: "Grilled beef patty with American cheese on a bun with fries",
+        img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=75",
+      },
+      {
+        name: "Chicken Fingers",
+        desc: "Crispy breaded chicken strips with fries",
+        img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=75",
+      },
+      {
+        name: "Kid Grilled Cheese",
+        desc: "Classic grilled cheese sandwich with fries",
+        img: "https://images.unsplash.com/photo-1528736235302-52922df5c122?w=400&q=75",
+      },
+      {
+        name: "Buttered Noodles",
+        desc: "Pasta tossed in butter",
+        img: "https://images.unsplash.com/photo-1551462147-ff29053bfc14?w=400&q=75",
+      },
+      {
+        name: "Kid Mac & Cheese",
+        desc: "Classic macaroni and cheese",
+        img: "https://images.unsplash.com/photo-1543339494-b4cd4f7ba686?w=400&q=75",
+      },
+      {
+        name: "Mini Corn Dogs",
+        desc: "Bite-sized corn dogs with fries",
+        img: "https://images.unsplash.com/photo-1619221882266-c3eb7eedb2e4?w=400&q=75",
+      },
+    ],
+  },
+  desserts: {
+    label: "Desserts",
+    tagline: "Sweet endings",
+    items: [
+      {
+        name: "Brownie Bites",
+        desc: "Deep-fried brownie pieces, crisp outside, warm and soft inside, topped with chocolate, caramel, and whipped cream",
+        img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&q=75",
+      },
+      {
+        name: "Brownie Bite Sundae",
+        desc: "Our signature brownie bites served with vanilla ice cream, chocolate and caramel drizzle",
+        img: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&q=75",
+        featured: true,
+      },
+      {
+        name: "Holy Cow Pie",
+        desc: "Chocolate and vanilla ice cream between layers of brownie and toffee in a chocolate cookie crust, topped with whipped cream, chocolate, caramel, and three cherries",
+        img: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=400&q=75",
+      },
+    ],
+  },
 };
 
 export default function MenuPage() {

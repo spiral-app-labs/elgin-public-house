@@ -27,6 +27,8 @@ const categoryKeys = [
   "sandwiches",
   "tacos",
   "entrees",
+  "kids",
+  "desserts",
 ];
 
 export default function MenuClient({ menuData }: { menuData: MenuData }) {
