@@ -45,7 +45,7 @@ body {
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -61,11 +61,33 @@ body {
 @keyframes slide-in-right {
   from {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(40px);
   }
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -74,8 +96,23 @@ body {
   to { transform: scaleX(1); }
 }
 
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 .animate-fade-up {
-  animation: fade-up 0.7s ease-out both;
+  animation: fade-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .animate-fade-in {
@@ -83,7 +120,23 @@ body {
 }
 
 .animate-slide-in-right {
-  animation: slide-in-right 0.6s ease-out both;
+  animation: slide-in-right 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
 }
 
 /* Staggered delays */
@@ -93,6 +146,8 @@ body {
 .delay-400 { animation-delay: 400ms; }
 .delay-500 { animation-delay: 500ms; }
 .delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
 
 /* Parallax hero */
 .parallax-hero {
@@ -107,13 +162,23 @@ body {
   }
 }
 
+/* 3D Card Tilt */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+  perspective: 1000px;
+}
+.card-3d:hover {
+  box-shadow: 0 25px 60px rgba(15, 27, 45, 0.2), 0 0 0 1px rgba(193, 125, 62, 0.15);
+}
+
 /* Menu item hover effect */
 .menu-item {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .menu-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(15, 27, 45, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(15, 27, 45, 0.15);
 }
 
 /* Copper underline effect */
@@ -141,4 +206,47 @@ body {
 /* Star rating */
 .star-filled {
   color: var(--color-copper);
+}
+
+/* Shimmer text */
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-copper) 0%,
+    var(--color-copper-light) 40%,
+    #f0c070 50%,
+    var(--color-copper-light) 60%,
+    var(--color-copper) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Drink card hover */
+.drink-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.drink-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(15, 27, 45, 0.25);
+}
+
+/* Image overlay zoom */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.img-zoom:hover img {
+  transform: scale(1.08);
+}
+
+/* Section divider */
+.divider-copper {
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--color-copper), transparent);
 }
