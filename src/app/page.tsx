@@ -665,6 +665,59 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── ORDER ONLINE ── */}
+      <section className="py-16 sm:py-20 bg-navy border-y border-copper/20">
+        <div className="mx-auto max-w-4xl px-4 text-center">
+          <AnimatedSection animation="animate-fade-up">
+            <p className="text-copper text-sm tracking-[0.25em] uppercase mb-3 font-semibold">Can&apos;t Make It In?</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-cream mb-4">Order Online</h2>
+            <p className="text-cream/60 text-base mb-8 max-w-lg mx-auto">Get EPH delivered or order ahead for pickup — same great food, wherever you are.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://www.doordash.com/store/elgin-public-house-elgin-30957950/" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-[#FF3008] hover:bg-red-600 text-white px-8 py-4 rounded text-base font-bold tracking-wide transition-all hover:-translate-y-0.5">
+                🚗 Order on DoorDash
+              </a>
+              <a href="https://www.ubereats.com/store/elgin-public-house/HYzSa6QXXyaaOYM--xPAng" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-[#06C167] hover:bg-green-600 text-white px-8 py-4 rounded text-base font-bold tracking-wide transition-all hover:-translate-y-0.5">
+                🛵 Order on Uber Eats
+              </a>
+              <a href="https://order.toasttab.com/online/elgin-public-house-toast-now-219-e-chicago-st" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 border-2 border-copper/40 hover:border-copper text-cream hover:text-copper px-8 py-4 rounded text-base font-bold tracking-wide transition-all">
+                🥡 Order Direct (Toast)
+              </a>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── EVENTS & SPECIALS ── */}
+      <section className="py-16 sm:py-24 bg-navy-light">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <AnimatedSection className="text-center mb-12">
+            <p className="text-copper text-sm tracking-[0.25em] uppercase mb-3 font-semibold">What&apos;s On</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-cream mb-4">Events &amp; Weekly Specials</h2>
+            <p className="text-cream/60 text-base max-w-xl mx-auto">Something happening every night of the week at EPH.</p>
+          </AnimatedSection>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { day: "Monday", title: "Monday Night Football", desc: "Watch the game with $4 domestics and half-price wings all night long.", emoji: "🏈" },
+              { day: "Tuesday", title: "Taco Tuesday", desc: "Street tacos, margarita specials, and the best Tuesday in Elgin — period.", emoji: "🌮" },
+              { day: "Thursday", title: "Trivia Night", desc: "Test your knowledge at 7 PM. Win bar tabs, bragging rights, and glory.", emoji: "🧠" },
+              { day: "Weekly", title: "Live Music", desc: "Local bands and acoustic sets on select weekends. Check Facebook for lineup.", emoji: "🎸" },
+            ].map((e) => (
+              <AnimatedSection key={e.day} animation="animate-fade-up">
+                <div className="bg-navy rounded-xl p-6 border border-copper/15 h-full">
+                  <div className="text-3xl mb-3">{e.emoji}</div>
+                  <div className="text-copper text-xs font-bold uppercase tracking-widest mb-2">{e.day}</div>
+                  <h3 className="text-cream font-bold text-lg mb-2">{e.title}</h3>
+                  <p className="text-cream/55 text-sm leading-relaxed">{e.desc}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── FINAL CTA ── */}
       <section className="relative py-20 sm:py-28 overflow-hidden">
         <div
