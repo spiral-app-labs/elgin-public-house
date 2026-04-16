@@ -14,13 +14,16 @@ const menuData = {
     tagline: "Start your meal right",
     items: [
       {
-        name: "Loaded Tater Tots",
-        desc: "Bacon cheddar and chive stuffed tater tots with sour cream",
+        name: "Bacon Cheddar Chive Keg",
+        desc: "Bacon, cheddar, and chive stuffed tater tots with sour cream.",
+        price: "$13.99",
         img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400&q=75",
+        featured: true,
       },
       {
-        name: "Pretzel Bites",
-        desc: "Warm garlic buttered soft pretzel bites with mustard trio",
+        name: "Soft Pretzel Bites",
+        desc: "Warm garlic-buttered pretzel bites served with a house mustard trio.",
+        price: "$12.99",
         img: "https://images.unsplash.com/photo-1603532648955-039310d9ed75?w=400&q=75",
       },
       {
@@ -29,8 +32,9 @@ const menuData = {
         img: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&q=75",
       },
       {
-        name: "Chicken Quesadillas",
-        desc: "Grilled chicken, mushrooms, onions, bell peppers, chihuahua cheese on corn tortillas with house-made guacamole and sour cream",
+        name: "Chicken Quesadilla",
+        desc: "Grilled chicken, mushrooms, onions, peppers, and Chihuahua cheese with house guacamole and sour cream.",
+        price: "$14.99",
         img: "https://images.unsplash.com/photo-1618040996337-56904b7850b9?w=400&q=75",
       },
       {
@@ -46,6 +50,7 @@ const menuData = {
       {
         name: "Onion Rings",
         desc: "Beer battered in-house with bacon aioli",
+        price: "$12.99",
         img: "https://images.unsplash.com/photo-1639024471283-03518883512d?w=400&q=75",
       },
       {
@@ -56,11 +61,13 @@ const menuData = {
       {
         name: "Fried Pickles",
         desc: "Beer battered in-house with spicy avocado ranch",
+        price: "$5.99",
         img: "https://images.unsplash.com/photo-1619221882266-c3eb7eedb2e4?w=400&q=75",
       },
       {
         name: "Cheese Curds",
         desc: "Beer battered in-house with spicy ranch",
+        price: "$9.99",
         img: "https://images.unsplash.com/photo-1531749668029-2db88e4276c7?w=400&q=75",
       },
     ],
@@ -113,19 +120,22 @@ const menuData = {
     note: "Premium Upgrades: Wagyu Beef or Quad (Beef, Elk, Bison, Boar). Non-Beef: Grilled Chicken, Fried Chicken, Beyond Patty. Sides: Fries, Chips, Onion Straws, Soup or Salad.",
     items: [
       {
-        name: "The Pork Belly Mac",
+        name: "Mac Attack",
         desc: "Crispy pork belly, creamy mac and cheese, fried jalapenos",
+        price: "$18.99",
         img: "https://images.unsplash.com/photo-1586816001966-79b736744398?w=400&q=75",
         featured: true,
       },
       {
-        name: "Sweet Whiskey Burger",
-        desc: "Cheddar, house-made sweet whiskey sauce (bourbon, applewood bacon, caramelized onions, mushrooms) on brioche",
+        name: "Kentucky",
+        desc: "Cheddar, Sweet Whiskey sauce, applewood bacon, caramelized onions, and mushrooms.",
+        price: "$18.99",
         img: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=400&q=75",
       },
       {
         name: "French Onion Burger",
-        desc: "Smothered in gouda, gruyere and fontina cheeses, grilled onions, crispy onion straws on onion kaiser roll with au jus",
+        desc: "Gouda, gruyere, and fontina with grilled onions, onion straws, and au jus on an onion roll.",
+        price: "$18.99",
         img: "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=400&q=75",
         featured: true,
       },
@@ -142,11 +152,13 @@ const menuData = {
       {
         name: "Southwest Burger",
         desc: "Pepperjack, guacamole, fresh jalapenos, pico de gallo",
+        price: "$18.99",
         img: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=400&q=75",
       },
       {
         name: "Black Bean Burger",
         desc: "Homemade with roasted bell peppers and corn, pico, chimichurri, feta",
+        price: "$16.99",
         img: "https://images.unsplash.com/photo-1520072959219-c595e6cdc926?w=400&q=75",
       },
     ],
@@ -158,16 +170,19 @@ const menuData = {
       {
         name: "Buffalo Chicken Sandwich",
         desc: "8oz breaded fried chicken, mild buffalo, spicy slaw, jalapenos, blue cheese on brioche",
+        price: "$19.99",
         img: "https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=400&q=75",
       },
       {
-        name: "Artichoke Chicken Melt",
+        name: "Artichoke Chicken Panini",
         desc: "Chicken, artichokes, roasted bell peppers, onions, provolone, pesto",
+        price: "$16.99",
         img: "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400&q=75",
       },
       {
-        name: "Brie & Apple",
+        name: "Brie Grilled Cheese",
         desc: "Creamy Brie, Granny Smith apples, apricot jam",
+        price: "$15.99",
         img: "https://images.unsplash.com/photo-1528736235302-52922df5c122?w=400&q=75",
       },
       {
@@ -178,37 +193,44 @@ const menuData = {
       {
         name: "Cubano",
         desc: "Slow roasted pork shoulder, smoked ham, swiss, pickles, red onions, whole grain mustard, garlic aioli",
+        price: "$16.99",
         img: "https://images.unsplash.com/photo-1539252554453-80ab65ce3586?w=400&q=75",
       },
       {
         name: "Fried Shrimp Po'Boy",
         desc: "8 jumbo breaded shrimp, lettuce, tomato, red onion, dijon, garlic aioli on ciabatta",
+        price: "$16.99",
         img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=75",
       },
       {
-        name: "Turkey Club",
-        desc: "Smoked turkey, applewood bacon, swiss, lettuce, tomato, honey-mustard on pretzel roll",
+        name: "Black Forest Turkey",
+        desc: "Smoked turkey, applewood bacon, swiss, lettuce, tomato, and honey mustard on a pretzel roll.",
+        price: "$16.99",
         img: "https://images.unsplash.com/photo-1567234669003-dce7a7a88821?w=400&q=75",
       },
       {
-        name: "Pulled Pork",
+        name: "BBQ Pulled Pork",
         desc: "Slow roasted, onion straws, mild BBQ on pretzel roll",
+        price: "$16.99",
         img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&q=75",
       },
       {
-        name: "Triple Grilled Cheese",
-        desc: "Provolone, American, chihuahua cheeses, tomatoes, bacon. Staff favorite! Add fried egg!",
+        name: "Ale House Grilled Cheese",
+        desc: "Our staff favorite with provolone, American, Chihuahua cheese, tomatoes, and bacon.",
+        price: "$15.99",
         img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&q=75",
         featured: true,
       },
       {
-        name: "Loaded Philly",
-        desc: "Grilled ribeye, sauteed onions, breaded fried potatoes, provolone, sour cream, bacon on caramelized onion bun",
+        name: "Loaded Steak Sandwich",
+        desc: "Grilled ribeye with sauteed onions, fried potatoes, provolone, sour cream, and bacon.",
+        price: "$19.99",
         img: "https://images.unsplash.com/photo-1513185158878-8d8c2a2a3da3?w=400&q=75",
       },
       {
-        name: "Steak Melt",
-        desc: "Thick cut sourdough, sliced filet, caramelized onions, American, chihuahua, tomatoes",
+        name: "Filet Grilled Cheese",
+        desc: "Thick-cut sourdough with sliced filet, caramelized onions, American, Chihuahua, and tomatoes.",
+        price: "$17.99",
         img: "https://images.unsplash.com/photo-1475090169767-40ed8d18f67d?w=400&q=75",
         featured: true,
       },
@@ -236,22 +258,26 @@ const menuData = {
       {
         name: "Fish Tacos",
         desc: "Sauteed East Coast cod, cabbage, pico, avocado, corn & black bean salsa, jalapeno vinaigrette",
+        price: "$18.99",
         img: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=400&q=75",
       },
       {
         name: "Pork Belly Tacos",
         desc: "Slow roasted pork belly, jalapeno-maple BBQ glaze, shaved cabbage, grilled peaches, chipotle pepper sauce",
+        price: "$16.99",
         img: "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=400&q=75",
         featured: true,
       },
       {
         name: "Carnitas Tacos",
         desc: "Three shredded pork tacos with chihuahua cheese, cabbage, pico",
+        price: "$17.99",
         img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=75",
       },
       {
         name: "Steak Tacos",
         desc: "Strip steak, grilled onions, refried beans, mixed greens, pico, lime crema",
+        price: "$18.99",
         img: "https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?w=400&q=75",
       },
     ],
@@ -261,35 +287,41 @@ const menuData = {
     tagline: "Hearty plates, made from scratch",
     items: [
       {
-        name: "Cajun Cod",
+        name: "East Coast Cod",
         desc: "East Coast cod fried with Cajun seasoning, fried brussel sprouts, crispy potatoes",
+        price: "$19.99",
         img: "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?w=400&q=75",
       },
       {
         name: "Cajun Etouffee",
         desc: "New Orleans style with shrimp, chicken, andouille sausage over rice",
+        price: "$19.99",
         img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=75",
         featured: true,
       },
       {
         name: "Chimichurri Steak",
         desc: "Black Angus filet grilled, sliced, house chimichurri, teriyaki mushrooms, red potatoes",
+        price: "$25.99",
         img: "https://images.unsplash.com/photo-1558030006-450675393462?w=400&q=75",
         featured: true,
       },
       {
         name: "Fried Catfish",
         desc: "Three beer-battered filets with fries and coleslaw",
+        price: "$18.99",
         img: "https://images.unsplash.com/photo-1579208030886-b1f5b6b6086d?w=400&q=75",
       },
       {
-        name: "Cajun Pasta",
+        name: "Cajun Rigatoni",
         desc: "Rigatoni with andouille, tomatoes, feta in cajun cream sauce",
+        price: "$20.99",
         img: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400&q=75",
       },
       {
-        name: "Mac & Cheese",
+        name: "EPH Mac & Cheese",
         desc: "Cavatappi with homemade cheese sauce, crumbled bacon. Many add-ons available",
+        price: "$13.99",
         img: "https://images.unsplash.com/photo-1543339494-b4cd4f7ba686?w=400&q=75",
       },
     ],
@@ -345,14 +377,16 @@ const menuData = {
         img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&q=75",
       },
       {
-        name: "Brownie Bite Sundae",
-        desc: "Our signature brownie bites served with vanilla ice cream, chocolate and caramel drizzle",
+        name: "Cheesecake",
+        desc: "Classic cheesecake from the current dessert menu.",
+        price: "$9.00",
         img: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&q=75",
         featured: true,
       },
       {
-        name: "Holy Cow Pie",
-        desc: "Chocolate and vanilla ice cream between layers of brownie and toffee in a chocolate cookie crust, topped with whipped cream, chocolate, caramel, and three cherries",
+        name: "Carrot Cake",
+        desc: "A straightforward dessert-menu finish from the current Toast lineup.",
+        price: "$9.00",
         img: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=400&q=75",
       },
     ],
@@ -364,18 +398,11 @@ export default function MenuPage() {
     <>
       {/* Hero */}
       <section className="relative pt-32 sm:pt-40 pb-16 sm:pb-24 overflow-hidden">
-        <div
-          className="parallax-hero absolute inset-0"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80')",
-          }}
-        />
-        <div className="absolute inset-0 bg-navy/75" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(203,144,87,0.22),_transparent_35%),linear-gradient(180deg,_#112235_0%,_#08131f_100%)]" />
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
           <AnimatedSection>
             <p className="text-copper text-sm tracking-[0.2em] uppercase mb-3">
-              Elevated Pub Fare
+              Direct Menu
             </p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6">
               Our Menu
@@ -394,15 +421,11 @@ export default function MenuPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4 sm:py-5">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-center">
             <span className="text-copper font-bold text-sm uppercase tracking-wider">
-              Premium Upgrades
+              Current Direct-Order Pricing
             </span>
             <span className="text-navy/70 text-sm">
-              Upgrade any burger to{" "}
-              <span className="font-semibold text-navy">Wagyu Beef</span> or
-              the legendary{" "}
-              <span className="font-semibold text-navy">
-                Quad (Beef, Elk, Bison &amp; Wild Boar)
-              </span>
+              Highlighted prices are pulled from the live Toast pickup menu so
+              the owner sees real menu credibility, not placeholder pricing.
             </span>
           </div>
         </div>

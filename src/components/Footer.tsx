@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { site } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -16,22 +17,21 @@ export default function Footer() {
               </div>
               <div>
                 <div className="font-bold text-lg leading-tight tracking-wide">
-                  Elgin Public House
+                  {site.name}
                 </div>
                 <div className="text-cream/40 text-xs tracking-wider uppercase">
-                  Better Than Average Pub Grub
+                  Downtown Elgin Tavern
                 </div>
               </div>
             </div>
             <p className="text-cream/55 text-sm leading-relaxed mb-5">
-              Elgin&apos;s neighborhood pub — great food from Chef Greg, craft
-              drinks, and community spirit in the heart of downtown since day
-              one.
+              Late-night tavern fare, a serious bar program, and an upstairs
+              room for private gatherings in the heart of downtown Elgin.
             </p>
             {/* Social icons */}
             <div className="flex items-center gap-3">
               <a
-                href="https://www.facebook.com/eph219"
+                href={site.links.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-cream/10 hover:bg-blue-600 flex items-center justify-center transition-colors"
@@ -42,7 +42,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://www.yelp.com/biz/elgin-public-house-elgin"
+                href={site.links.yelp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-cream/10 hover:bg-red-600 flex items-center justify-center transition-colors"
@@ -53,7 +53,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="tel:8474688810"
+                href={site.contact.phoneHref}
                 className="w-9 h-9 rounded-full bg-cream/10 hover:bg-copper flex items-center justify-center transition-colors"
                 aria-label="Call us"
               >
@@ -70,13 +70,14 @@ export default function Footer() {
               Explore
             </h3>
             <ul className="space-y-3">
-              {[
-                { href: "/", label: "Home" },
-                { href: "/menu", label: "Full Menu" },
-                { href: "/about", label: "Our Story" },
-                { href: "/contact", label: "Contact" },
-                { href: "https://www.facebook.com/eph219", label: "Facebook", external: true },
-              ].map((link) => (
+                {[
+                  { href: "/", label: "Home" },
+                  { href: "/menu", label: "Full Menu" },
+                  { href: "/private-events", label: "Private Events" },
+                  { href: "/about", label: "Our Story" },
+                  { href: "/contact", label: "Contact" },
+                  { href: site.links.facebook, label: "Facebook", external: true },
+                ].map((link) => (
                 <li key={link.label}>
                   {link.external ? (
                     <a
@@ -107,7 +108,12 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li className="text-cream/55">Open Daily</li>
-              <li className="text-cream font-semibold">11:00 AM – 1:00 AM</li>
+              <li className="text-cream font-semibold">
+                Sun-Thu {site.hours.sundayThursday}
+              </li>
+              <li className="text-cream font-semibold">
+                Fri-Sat {site.hours.fridaySaturday}
+              </li>
               <li className="mt-3 text-cream/55">Kitchen Open</li>
               <li className="text-copper font-bold">Until Midnight · Every Night</li>
               <li className="mt-4">
@@ -127,19 +133,27 @@ export default function Footer() {
               Visit Us
             </h3>
             <ul className="space-y-2.5 text-sm text-cream/55">
-              <li>219 E Chicago St</li>
-              <li>Elgin, IL 60120</li>
+              <li>{site.address.street}</li>
+              <li>{site.address.city}, {site.address.region} {site.address.postalCode}</li>
               <li className="pt-2">
                 <a
-                  href="tel:8474688810"
+                  href={site.contact.phoneHref}
                   className="text-copper hover:text-copper-light transition-colors font-bold text-base"
                 >
-                  (847) 468-8810
+                  {site.contact.phone}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.contact.emailHref}
+                  className="text-cream/55 hover:text-copper transition-colors"
+                >
+                  {site.contact.email}
                 </a>
               </li>
               <li className="pt-3">
                 <a
-                  href="https://www.google.com/maps/search/219+E+Chicago+St+Elgin+IL"
+                  href={site.address.mapsDirections}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-cream/55 hover:text-copper transition-colors text-xs"
@@ -158,25 +172,14 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-14 pt-8 border-t border-cream/10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-cream/35 text-xs">
-            &copy; {new Date().getFullYear()} Elgin Public House · 219 E Chicago
-            St, Elgin, IL · All rights reserved.
+            Copyright &copy; {site.name} · {site.address.street}, {site.address.city}
           </p>
-          <div className="flex items-center gap-3">
-            <span className="text-cream/35 text-xs">#4 in Elgin on TripAdvisor</span>
-            <span className="text-cream/20 text-xs">·</span>
-            <div className="flex gap-0.5">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <svg
-                  key={i}
-                  className={`w-3 h-3 ${i <= 4 ? "text-copper" : "text-copper/35"}`}
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-            <span className="text-cream/35 text-xs">631 Yelp reviews</span>
+          <div className="flex items-center gap-3 text-xs text-cream/35">
+            <span>{site.proof.tripAdvisor}</span>
+            <span className="text-cream/20">·</span>
+            <span>{site.proof.yelp}</span>
+            <span className="text-cream/20">·</span>
+            <span>{site.privateEvents.roomName} pricing PDFs live</span>
           </div>
         </div>
       </div>

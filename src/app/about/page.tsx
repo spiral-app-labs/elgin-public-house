@@ -13,14 +13,7 @@ export default function AboutPage() {
     <>
       {/* Hero */}
       <section className="relative pt-32 sm:pt-40 pb-16 sm:pb-24 overflow-hidden">
-        <div
-          className="parallax-hero absolute inset-0"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1920&q=80')",
-          }}
-        />
-        <div className="absolute inset-0 bg-navy/75" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(203,144,87,0.22),_transparent_35%),linear-gradient(180deg,_#112235_0%,_#08131f_100%)]" />
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
           <AnimatedSection>
             <p className="text-copper text-sm tracking-[0.2em] uppercase mb-3">
@@ -30,8 +23,9 @@ export default function AboutPage() {
               More Than a Pub
             </h1>
             <p className="text-cream/80 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-              Elgin Public House is where community, craft, and comfort come
-              together in the heart of downtown Elgin.
+              A downtown Elgin tavern with a late-night kitchen, a serious bar
+              program, and an upstairs room that keeps private events part of
+              the real business.
             </p>
           </AnimatedSection>
         </div>
@@ -42,14 +36,21 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <AnimatedSection>
-              <div className="relative">
-                <img
-                  src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?w=800&q=80"
-                  alt="Warm pub interior with brass fixtures"
-                  className="rounded-lg shadow-lg w-full object-cover aspect-[4/3]"
-                />
-                <div className="absolute -bottom-4 -right-4 bg-copper text-cream px-5 py-3 rounded shadow-lg">
-                  <span className="font-bold text-sm">Est. Downtown Elgin</span>
+              <div className="rounded-2xl bg-navy text-cream p-8 sm:p-10 shadow-xl">
+                <p className="text-copper text-sm tracking-[0.22em] uppercase mb-4 font-semibold">
+                  What Matters Here
+                </p>
+                <div className="space-y-5">
+                  {[
+                    "Historic downtown address with a kitchen open 'til midnight every night.",
+                    "Burger-forward menu anchored by house signatures like the Quad, Mac Attack, and Ale House Grilled Cheese.",
+                    "Pub 217 upstairs keeps private dinners and group nights part of the sales story.",
+                  ].map((point) => (
+                    <div key={point} className="flex items-start gap-3">
+                      <span className="mt-1 h-2.5 w-2.5 rounded-full bg-copper flex-shrink-0" />
+                      <p className="text-cream/75 leading-relaxed">{point}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </AnimatedSection>
@@ -62,10 +63,9 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-navy/70 leading-relaxed">
                 <p>
-                  Elgin Public House isn&apos;t your cookie-cutter chain
-                  restaurant. From the brass fixtures and glass bar back to the
-                  live performances hosted upstairs, every detail reflects our
-                  commitment to creating a genuine neighborhood gathering place.
+                  Elgin Public House earns its keep as a downtown tavern first:
+                  late-night kitchen hours, a strong burger-and-sandwich lineup,
+                  and a bar program that makes dinner turn into another round.
                 </p>
                 <p>
                   We take pride in our elevated pub food — from 8oz Angus beef
@@ -74,11 +74,10 @@ export default function AboutPage() {
                   and you&apos;ve got something truly special.
                 </p>
                 <p>
-                  Our bar features an extensive craft beer selection, specialty
-                  martinis, and a curated collection of whiskeys, vodkas, wines,
-                  and ports. Whether it&apos;s lunch, a late-night bite (kitchen
-                  open &apos;til midnight!), or catching a show upstairs — EPH
-                  is where Elgin comes together.
+                  Upstairs events, direct Toast ordering, and the downtown
+                  address are part of what make the business feel complete.
+                  This redesign keeps those paths visible instead of hiding them
+                  behind generic pub copy.
                 </p>
               </div>
             </AnimatedSection>
@@ -99,18 +98,15 @@ export default function AboutPage() {
             {[
               {
                 title: "Craft Bar",
-                desc: "100+ craft beers, specialty martinis, wide selection of whiskeys, vodkas, wines, and ports. Our knowledgeable bartenders love matching you with your new favorite drink.",
-                img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=80",
+                desc: "Craft beer, martinis, whiskey, wine, and ports all stay part of the identity instead of getting buried under burger-only positioning.",
               },
               {
-                title: "Live Events",
-                desc: "Our upstairs space hosts plays, performances, and community events. EPH is more than food and drinks — it's a cultural hub for downtown Elgin.",
-                img: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600&q=80",
+                title: "Pub 217 Upstairs",
+                desc: "Private events remain a real booking path with pricing PDFs, call/email contact, and a clearer homepage presence.",
               },
               {
                 title: "Late Night Kitchen",
-                desc: "Cravings don't clock out at 9 PM. Our full kitchen stays open until midnight every single night — burgers, wings, and everything in between.",
-                img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80",
+                desc: "The midnight kitchen hook now shows up across the site because it is one of the strongest reasons the business stands out in Elgin.",
               },
             ].map((feature, i) => (
               <AnimatedSection
@@ -118,15 +114,9 @@ export default function AboutPage() {
                 animation="animate-fade-up"
                 delay={`delay-${(i + 1) * 100}`}
               >
-                <div className="group overflow-hidden rounded-lg bg-cream h-full">
-                  <div className="overflow-hidden aspect-[3/2]">
-                    <img
-                      src={feature.img}
-                      alt={feature.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="p-6">
+                <div className="overflow-hidden rounded-lg bg-cream h-full border border-navy/10 p-6">
+                  <div className="mb-4 h-1.5 w-16 rounded-full bg-copper/70" />
+                  <div>
                     <h3 className="text-navy font-bold text-xl mb-2">
                       {feature.title}
                     </h3>

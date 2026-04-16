@@ -14,7 +14,7 @@ export default function Counter({
   duration?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(end);
   const [started, setStarted] = useState(false);
 
   useEffect(() => {
@@ -42,18 +42,24 @@ export default function Counter({
     const increment = end / steps;
     const stepTime = duration / steps;
     let current = 0;
+    let timer: ReturnType<typeof setInterval> | undefined;
+    const frame = requestAnimationFrame(() => {
+      setCount(0);
+      timer = setInterval(() => {
+        current += increment;
+        if (current >= end) {
+          setCount(end);
+          if (timer) clearInterval(timer);
+        } else {
+          setCount(Math.floor(current));
+        }
+      }, stepTime);
+    });
 
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= end) {
-        setCount(end);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(current));
-      }
-    }, stepTime);
-
-    return () => clearInterval(timer);
+    return () => {
+      cancelAnimationFrame(frame);
+      if (timer) clearInterval(timer);
+    };
   }, [started, end, duration]);
 
   return (

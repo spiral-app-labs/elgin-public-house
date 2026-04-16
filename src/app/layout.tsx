@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Elgin Public House",
   },
   description:
-    "Downtown Elgin's beloved neighborhood pub. Craft burgers including Wagyu & exotic Quad Burger, specialty martinis, 100+ craft beers, and kitchen open 'til midnight. Ranked #4 in Elgin on TripAdvisor.",
+    "Downtown Elgin tavern fare, serious drinks, private events upstairs, and a kitchen open 'til midnight every night.",
   keywords: [
     "Elgin Public House",
     "EPH",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Elgin Public House — Elgin's Neighborhood Pub & Grill",
     description:
-      "Craft burgers, specialty martinis, and community spirit in downtown Elgin. Kitchen open 'til midnight every night.",
+      "Late-night tavern fare, serious drinks, and private events in downtown Elgin.",
     url: "https://elginpublichouse.com",
     siteName: "Elgin Public House",
     locale: "en_US",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Elgin Public House",
     description:
-      "Downtown Elgin's neighborhood pub. Craft burgers, 100+ beers, kitchen open 'til midnight.",
+      "Downtown Elgin tavern fare, serious drinks, and a kitchen open 'til midnight.",
   },
   robots: {
     index: true,
@@ -58,7 +58,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   name: "Elgin Public House",
-  image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1200",
+  image:
+    "https://img1.wsimg.com/isteam/ip/6f341580-09b3-43e5-a62d-23c9c012eba5/favicon/94b01448-ccf5-4369-b96a-f1361bef8d58/cde56a5a-d2ed-45ec-a226-c8403946eb65.JPEG/:/rs=w:1200,h:630,m",
   url: "https://elginpublichouse.com",
   telephone: "+1-847-468-8810",
   address: {
@@ -74,29 +75,23 @@ const jsonLd = {
     latitude: 42.0372,
     longitude: -88.2818,
   },
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ],
-    opens: "11:00",
-    closes: "01:00",
-  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Sunday"],
+      opens: "11:00",
+      closes: "01:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Friday", "Saturday"],
+      opens: "11:00",
+      closes: "02:00",
+    },
+  ],
   servesCuisine: ["American", "Pub Food", "Burgers"],
   priceRange: "$$",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.4",
-    reviewCount: "2157",
-    bestRating: "5",
-  },
-  menu: "https://elginpublichouse.com/menu",
+  menu: "https://elginpublichouse.com/eph-menu",
 };
 
 export default function RootLayout({

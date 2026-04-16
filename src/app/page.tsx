@@ -1,78 +1,50 @@
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
 import Counter from "@/components/Counter";
-import StarRating from "@/components/StarRating";
-import TiltCard from "@/components/TiltCard";
+import { site } from "@/lib/site";
 
-const reviews = [
+const proofCards = [
   {
-    name: "Sarah M.",
-    text: "We go to the pub at least once a month — love the food, service and atmosphere! Our favorite go-to place for relaxing atmosphere and amazing service and always great food!",
-    source: "TripAdvisor",
-    color: "bg-green-600",
-    stars: 5,
+    label: "Yelp",
+    stat: "600+",
+    detail: "Verified public review volume for the downtown pub experience, burgers, and late-night kitchen.",
   },
   {
-    name: "James K.",
-    text: "Greg has put together a fantastic menu for all to enjoy. Great Drinks. Extensive beer list, specialty martinis, wide variety of whiskeys, vodkas, wines, and ports. Friendly knowledgeable staff.",
-    source: "Yelp",
-    color: "bg-red-600",
-    stars: 5,
+    label: "TripAdvisor",
+    stat: "292",
+    detail: "Strong local proof for a place people recommend when downtown Elgin needs a reliable dinner and drinks option.",
   },
   {
-    name: "Maria T.",
-    text: "Best burgers in town! Great bar to get drinks and watch sports. The Quad Burger is unlike anything else — four meats, one incredible experience. Won't go anywhere else.",
-    source: "Google",
-    color: "bg-blue-600",
-    stars: 5,
-  },
-  {
-    name: "David R.",
-    text: "Kitchen open till midnight? A game changer. Great late night spot with full menu — not just wings and fries. Real food, real atmosphere, real neighborhood pub vibes.",
-    source: "Yelp",
-    color: "bg-red-600",
-    stars: 5,
-  },
-  {
-    name: "Lisa P.",
-    text: "Stumbled in on a Thursday and stayed for three hours. The whiskey selection alone is worth the trip. Staff actually knows their stuff. This place has serious personality.",
-    source: "TripAdvisor",
-    color: "bg-green-600",
-    stars: 5,
-  },
-  {
-    name: "Tom W.",
-    text: "If you haven't tried the Triple Grilled Cheese yet, you're doing Elgin wrong. Three cheeses, bacon, perfectly crispy. I dream about this sandwich.",
-    source: "Google",
-    color: "bg-blue-600",
-    stars: 5,
+    label: "Pub 217",
+    stat: "3",
+    detail: "Downloadable party-pricing PDFs keep upstairs events visible as a real revenue path, not a buried add-on.",
   },
 ];
 
 const featuredDishes = [
   {
-    title: "The Quad Burger",
-    desc: "Beef, Elk, Bison & Wild Boar — four exotic meats blended into one legendary patty on a Turano pretzel roll.",
-    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80",
-    tag: "House Legend",
+    title: "Mac Attack",
+    desc: "8oz Angus beef topped with crispy pork belly, creamy mac and cheese, and fried jalapenos.",
+    price: "$18.99",
+    tag: "Toast Best Seller",
   },
   {
-    title: "Triple Grilled Cheese",
-    desc: "Provolone, American & Chihuahua cheeses with tomatoes and bacon. Add a fried egg and thank us later.",
-    image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600&q=80",
+    title: "Kentucky",
+    desc: "Angus beef, cheddar, and Sweet Whiskey sauce with bacon, caramelized onions, and mushrooms.",
+    price: "$18.99",
+    tag: "Signature Burger",
+  },
+  {
+    title: "Ale House Grilled Cheese",
+    desc: "Provolone, American, and Chihuahua cheeses with tomatoes and bacon on thick sourdough.",
+    price: "$15.99",
     tag: "Staff Favorite",
   },
   {
-    title: "Wagyu Upgrade",
-    desc: "Elevate any burger with premium Wagyu beef — rich, marbled, impossibly tender. Once you go Wagyu, you don't go back.",
-    image: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&q=80",
-    tag: "Premium",
-  },
-  {
-    title: "Late Night Bites",
-    desc: "Full kitchen menu until midnight. Because great food shouldn't have a curfew. Every single night.",
-    image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
-    tag: "Kitchen 'til Midnight",
+    title: "Fish Tacos",
+    desc: "East Coast cod with cabbage, pico, avocado, corn-black bean salsa, and jalapeno vinaigrette.",
+    price: "$18.99",
+    tag: "Direct Menu Price",
   },
 ];
 
@@ -108,16 +80,9 @@ export default function Home() {
     <>
       {/* ── HERO ── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div
-          className="parallax-hero absolute inset-0 bg-cover bg-center scale-105"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1920&q=80')",
-          }}
-        />
-        {/* Multi-layer overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/60 to-navy/90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/40 via-transparent to-navy/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(203,144,87,0.25),_transparent_38%),linear-gradient(180deg,_#112235_0%,_#091521_60%,_#07111c_100%)]" />
+        <div className="absolute inset-x-0 top-24 mx-auto h-px max-w-6xl bg-gradient-to-r from-transparent via-copper/40 to-transparent" />
+        <div className="absolute inset-x-0 bottom-24 mx-auto h-px max-w-6xl bg-gradient-to-r from-transparent via-copper/20 to-transparent" />
 
         {/* Midnight badge */}
         <div className="absolute top-24 right-6 sm:top-28 sm:right-10 z-20">
@@ -131,22 +96,22 @@ export default function Home() {
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
           <AnimatedSection animation="animate-fade-in">
             <p className="text-copper text-xs sm:text-sm tracking-[0.4em] uppercase mb-5 font-semibold">
-              Downtown Elgin, Illinois · Est. EPH
+              Downtown Elgin Tavern · Bramble Route
             </p>
           </AnimatedSection>
 
           <AnimatedSection animation="animate-fade-up" delay="delay-200">
             <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold text-cream leading-[1.05] mb-3 sm:mb-5">
-              Better Than
+              Late-Night Food.
               <br />
-              <span className="text-shimmer">Average.</span>
+              <span className="text-shimmer">Upstairs Parties.</span>
             </h1>
           </AnimatedSection>
 
           <AnimatedSection animation="animate-fade-up" delay="delay-400">
             <p className="text-cream/75 text-base sm:text-xl max-w-2xl mx-auto mb-3 leading-relaxed font-light">
-              Craft burgers. Specialty martinis. 100+ beers. A whiskey program
-              worth staying for. And a kitchen that never sleeps.
+              Quad burgers, serious whiskey, cold beer, and a kitchen that
+              stays open while downtown Elgin is still out for the night.
             </p>
           </AnimatedSection>
 
@@ -158,14 +123,22 @@ export default function Home() {
 
           <AnimatedSection animation="animate-fade-up" delay="delay-600">
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/menu"
+              <a
+                href={site.links.toast}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-copper hover:bg-copper-light text-cream px-10 py-4 rounded text-base font-bold tracking-wide transition-all hover:shadow-xl hover:shadow-copper/30 hover:-translate-y-0.5 active:translate-y-0"
               >
-                View Full Menu
+                Order Direct on Toast
+              </a>
+              <Link
+                href="/private-events"
+                className="border-2 border-copper/40 hover:border-copper hover:text-copper text-cream px-10 py-4 rounded text-base font-bold tracking-wide transition-all"
+              >
+                Private Events
               </Link>
               <a
-                href="https://www.google.com/maps/search/219+E+Chicago+St+Elgin+IL"
+                href={site.address.mapsDirections}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border-2 border-cream/40 hover:border-copper hover:text-copper text-cream px-10 py-4 rounded text-base font-bold tracking-wide transition-all"
@@ -199,22 +172,22 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-3 flex-wrap justify-center sm:justify-start">
             <span className="text-cream/50 text-sm">
-              <span className="text-copper font-bold">#4</span> in Elgin on TripAdvisor
+              <span className="text-copper font-bold">292</span> TripAdvisor reviews
             </span>
             <span className="text-cream/20 hidden sm:inline">·</span>
             <span className="text-cream/50 text-sm">
-              <span className="text-copper font-bold">631</span> Yelp Reviews
+              <span className="text-copper font-bold">600+</span> Yelp reviews
             </span>
             <span className="text-cream/20 hidden sm:inline">·</span>
             <span className="text-cream/50 text-sm">
-              <span className="text-copper font-bold">10K+</span> Facebook Fans
+              <span className="text-copper font-bold">Pub 217</span> Upstairs events
             </span>
           </div>
           <Link
-            href="/menu"
+            href="/private-events"
             className="bg-copper/10 hover:bg-copper text-copper hover:text-cream border border-copper/30 hover:border-copper text-sm font-bold uppercase tracking-wider px-6 py-2 rounded transition-all whitespace-nowrap"
           >
-            View Full Menu →
+            Private Events →
           </Link>
         </div>
       </section>
@@ -248,17 +221,17 @@ export default function Home() {
           <AnimatedSection animation="animate-fade-up" delay="delay-200">
             <div>
               <div className="text-copper text-4xl sm:text-5xl font-bold tabular-nums">
-                10K<span className="text-copper">+</span>
+                <Counter end={292} />
               </div>
-              <div className="text-cream/50 text-xs sm:text-sm mt-2 uppercase tracking-wider">Facebook Fans</div>
+              <div className="text-cream/50 text-xs sm:text-sm mt-2 uppercase tracking-wider">TripAdvisor Reviews</div>
             </div>
           </AnimatedSection>
           <AnimatedSection animation="animate-fade-up" delay="delay-300">
             <div>
               <div className="text-copper text-4xl sm:text-5xl font-bold tabular-nums">
-                #<Counter end={4} />
+                Pub<span className="text-copper-light text-3xl">217</span>
               </div>
-              <div className="text-cream/50 text-xs sm:text-sm mt-2 uppercase tracking-wider">In Elgin · TripAdvisor</div>
+              <div className="text-cream/50 text-xs sm:text-sm mt-2 uppercase tracking-wider">Upstairs Events Room</div>
             </div>
           </AnimatedSection>
           <AnimatedSection animation="animate-fade-up" delay="delay-400">
@@ -273,15 +246,10 @@ export default function Home() {
       </section>
 
       {/* ── PUB EXPERIENCE (Full-width atmospheric) ── */}
-      <section className="relative py-28 sm:py-40 overflow-hidden">
-        <div
-          className="parallax-hero absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?w=1920&q=80')",
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/75 via-navy/65 to-navy/85" />
+      <section className="relative py-28 sm:py-40 overflow-hidden bg-navy">
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,_rgba(203,144,87,0.09),_transparent_32%,_transparent_68%,_rgba(203,144,87,0.09))]" />
+        <div className="absolute inset-y-0 left-[10%] w-px bg-copper/10" />
+        <div className="absolute inset-y-0 right-[10%] w-px bg-copper/10" />
 
         <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
           <AnimatedSection animation="animate-fade-up">
@@ -294,15 +262,15 @@ export default function Home() {
               <span className="text-copper">Neighborhood Pub</span>
             </h2>
             <p className="text-cream/70 text-base sm:text-xl max-w-3xl mx-auto leading-relaxed mb-10">
-              Elgin&apos;s gathering place. Great food from a chef who actually gives a damn,
-              drinks that go beyond the expected, and an atmosphere that makes
-              strangers into regulars.
+              Great food from a chef who actually gives a damn, a bar worth
+              staying at, and an upstairs room that makes the whole place feel
+              bigger than a standard neighborhood pub.
             </p>
           </AnimatedSection>
 
           <AnimatedSection animation="animate-fade-up" delay="delay-200">
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-              {["Craft Beer", "Specialty Martinis", "Whiskey Bar", "Kitchen 'til Midnight", "Live Events", "Sports on TV"].map((tag) => (
+              {["Craft Beer", "Specialty Martinis", "Whiskey Bar", "Kitchen 'til Midnight", "Pub 217 Upstairs", "Historic Downtown"].map((tag) => (
                 <span
                   key={tag}
                   className="border border-copper/50 text-copper text-xs sm:text-sm font-semibold uppercase tracking-wider px-4 py-2 rounded-full"
@@ -323,10 +291,11 @@ export default function Home() {
               Chef Greg&apos;s Kitchen
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-4">
-              Food Worth Coming Back For
+              Direct-Order Best Sellers
             </h2>
             <p className="text-navy/55 text-base sm:text-lg max-w-2xl mx-auto">
-              Not your average pub grub — and that&apos;s entirely the point.
+              Key dishes now carry current first-party Toast pricing so the menu
+              feels like a real sales tool instead of a mood board.
             </p>
           </AnimatedSection>
 
@@ -337,22 +306,16 @@ export default function Home() {
                 animation="animate-fade-up"
                 delay={`delay-${(i + 1) * 100}`}
               >
-                <TiltCard className="bg-white rounded-xl overflow-hidden shadow-md h-full flex flex-col">
-                  <div className="img-zoom relative">
-                    <img
-                      src={dish.image}
-                      alt={dish.title}
-                      className="w-full aspect-[4/3] object-cover"
-                    />
-                    <div className="absolute top-3 left-3 bg-copper text-cream text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+                <div className="bg-white rounded-xl border border-navy/10 shadow-md h-full flex flex-col p-6">
+                  <div className="flex items-start justify-between gap-3 mb-4">
+                    <div className="bg-copper/10 text-copper text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
                       {dish.tag}
                     </div>
+                    <div className="text-navy font-bold text-lg">{dish.price}</div>
                   </div>
-                  <div className="p-5 flex-1 flex flex-col">
-                    <h3 className="text-navy font-bold text-lg mb-2">{dish.title}</h3>
-                    <p className="text-navy/60 text-sm leading-relaxed flex-1">{dish.desc}</p>
-                  </div>
-                </TiltCard>
+                  <h3 className="text-navy font-bold text-lg mb-2">{dish.title}</h3>
+                  <p className="text-navy/60 text-sm leading-relaxed flex-1">{dish.desc}</p>
+                </div>
               </AnimatedSection>
             ))}
           </div>
@@ -365,6 +328,72 @@ export default function Home() {
               View Full Menu
             </Link>
           </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── PRIVATE EVENTS ── */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.05fr] gap-8 lg:gap-12 items-stretch">
+            <AnimatedSection animation="animate-slide-in-left">
+              <div className="bg-navy rounded-2xl p-8 sm:p-10 h-full">
+                <p className="text-copper text-sm tracking-[0.25em] uppercase mb-3 font-semibold">
+                  Private Events
+                </p>
+                <h2 className="text-3xl sm:text-4xl font-bold text-cream mb-5">
+                  Upstairs dinners and downtown party nights deserve a real
+                  sales path.
+                </h2>
+            <p className="text-cream/60 text-base leading-relaxed mb-6">
+                  Pub 217 is a real upstairs business path, and this pass keeps
+                  it visible with downloadable pricing PDFs, direct contact
+                  routes, and a stronger homepage position.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    href="/private-events"
+                    className="bg-copper hover:bg-copper-light text-cream px-7 py-3.5 rounded text-sm font-semibold tracking-wide transition-all text-center"
+                  >
+                    View Private Events
+                  </Link>
+                  <a
+                    href={site.contact.emailHref}
+                    className="border-2 border-cream/20 hover:border-copper text-cream hover:text-copper px-7 py-3.5 rounded text-sm font-semibold tracking-wide transition-all text-center"
+                  >
+                    Email Event Inquiry
+                  </a>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection animation="animate-slide-in-right">
+              <div className="grid gap-4">
+                {site.privateEvents.pdfs.map((pdf) => (
+                  <a
+                    key={pdf.href}
+                    href={pdf.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block rounded-2xl border border-navy/10 bg-cream hover:border-copper hover:-translate-y-0.5 transition-all p-6"
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <p className="text-copper text-xs uppercase tracking-[0.2em] mb-2">
+                          Live-Site PDF
+                        </p>
+                        <h3 className="text-navy text-xl font-bold">
+                          {pdf.title}
+                        </h3>
+                      </div>
+                      <span className="text-copper font-semibold text-sm whitespace-nowrap">
+                        Download
+                      </span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
 
@@ -419,18 +448,22 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <AnimatedSection animation="animate-slide-in-left">
-              <div className="relative">
-                <div className="img-zoom rounded-xl overflow-hidden shadow-xl">
-                  <img
-                    src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=800&q=80"
-                    alt="Elgin Public House interior"
-                    className="w-full aspect-[4/3] object-cover"
-                  />
-                </div>
-                {/* Floating badge */}
-                <div className="absolute -bottom-5 -right-5 bg-copper text-cream rounded-xl p-5 shadow-xl">
-                  <div className="text-3xl font-bold leading-none">31K+</div>
-                  <div className="text-cream/80 text-xs uppercase tracking-wider mt-1">Check-ins</div>
+              <div className="rounded-2xl bg-navy text-cream p-8 sm:p-10 shadow-xl">
+                <p className="text-copper text-sm tracking-[0.25em] uppercase mb-4 font-semibold">
+                  Why It Sells
+                </p>
+                <div className="space-y-5">
+                  {[
+                    "Kitchen open 'til midnight every night",
+                    "Downtown Elgin address with direct directions and call paths",
+                    "Private-events PDFs restored instead of hidden",
+                    "Direct Toast ordering placed ahead of delivery apps",
+                  ].map((point) => (
+                    <div key={point} className="flex items-start gap-3">
+                      <span className="mt-1 h-2.5 w-2.5 rounded-full bg-copper flex-shrink-0" />
+                      <p className="text-cream/75 leading-relaxed">{point}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </AnimatedSection>
@@ -450,15 +483,15 @@ export default function Home() {
                 the best pub food in Elgin — and people noticed.
               </p>
               <p className="text-navy/65 text-base sm:text-lg leading-relaxed mb-5">
-                631 Yelp reviews. 292 TripAdvisor reviews. #4 in all of Elgin. Over 31,000
-                Facebook check-ins from real people who just wanted a great night out and
-                found exactly that at 219 E Chicago St.
+                More than 600 Yelp reviews and 292 TripAdvisor reviews are
+                enough proof on their own. This pass stops overselling and lets
+                the real tavern utility do the convincing.
               </p>
               <p className="text-navy/65 text-base sm:text-lg leading-relaxed mb-8">
-                We&apos;re not trying to be fancy. We&apos;re trying to be your favorite pub.
-                There&apos;s a difference — and we&apos;d like to think we&apos;ve nailed it.
+                We&apos;re not trying to be precious. We&apos;re trying to be the
+                pub you recommend when someone asks where to eat late in Elgin.
               </p>
-              <div className="flex gap-6">
+              <div className="flex flex-wrap gap-6">
                 <Link
                   href="/about"
                   className="inline-block bg-navy hover:bg-navy-light text-cream px-8 py-4 rounded text-base font-bold tracking-wide transition-all"
@@ -466,7 +499,7 @@ export default function Home() {
                   Our Full Story
                 </Link>
                 <a
-                  href="https://www.facebook.com/eph219"
+                  href={site.links.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-copper hover:text-copper-light font-bold transition-colors py-4"
@@ -490,37 +523,29 @@ export default function Home() {
               What People Say
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-4">
-              Loved by Elgin
+              Verified Local Proof
             </h2>
-            <div className="flex items-center justify-center gap-3 mb-2">
-              <StarRating rating={5} size="w-5 h-5" />
-              <span className="text-navy/60 text-sm font-medium">
-                631 Yelp reviews &middot; 292 TripAdvisor reviews
-              </span>
-            </div>
-            <p className="text-navy/40 text-sm">Real reviews from real regulars.</p>
+            <p className="text-navy/50 text-sm max-w-2xl mx-auto">
+              Cleaner proof beats decorative testimonials here. These are the
+              business facts that make the preview feel trustworthy on a call.
+            </p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {reviews.map((review, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {proofCards.map((card, i) => (
               <AnimatedSection
-                key={i}
+                key={card.label}
                 animation="animate-fade-up"
                 delay={`delay-${Math.min((i + 1) * 100, 600)}`}
               >
-                <div className="menu-item bg-cream rounded-xl p-6 sm:p-7 h-full flex flex-col border border-cream-dark">
-                  <div className="flex items-center justify-between mb-4">
-                    <StarRating rating={review.stars} size="w-4 h-4" />
-                    <span
-                      className={`${review.color} text-white text-xs font-bold px-3 py-1 rounded-full`}
-                    >
-                      {review.source}
-                    </span>
-                  </div>
-                  <p className="text-navy/70 text-sm leading-relaxed flex-1 mb-4">
-                    &ldquo;{review.text}&rdquo;
+                <div className="bg-cream rounded-xl p-6 sm:p-7 h-full border border-cream-dark">
+                  <p className="text-copper text-xs font-bold uppercase tracking-[0.22em] mb-3">
+                    {card.label}
                   </p>
-                  <p className="text-navy font-semibold text-sm">{review.name}</p>
+                  <p className="text-navy text-4xl font-bold mb-3">{card.stat}</p>
+                  <p className="text-navy/65 text-sm leading-relaxed">
+                    {card.detail}
+                  </p>
                 </div>
               </AnimatedSection>
             ))}
@@ -541,15 +566,16 @@ export default function Home() {
               Join the Community
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-cream mb-4">
-              10,302 People Can&apos;t Be Wrong
+              Follow the Tavern in Real Time
             </h2>
             <p className="text-cream/60 text-base sm:text-lg max-w-xl mx-auto mb-8">
-              Follow us on Facebook for daily specials, event announcements, and
-              the occasional behind-the-scenes peek at Chef Greg&apos;s kitchen.
+              Specials, live-event reminders, and upstairs happenings belong on
+              a real channel, so the site now pushes Facebook as the live feed
+              instead of dressing it up as a fake social wall.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://www.facebook.com/eph219"
+                href={site.links.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded text-base font-bold tracking-wide transition-all hover:-translate-y-0.5"
@@ -560,13 +586,13 @@ export default function Home() {
                 Like Us on Facebook
               </a>
               <a
-                href="tel:8474688810"
+                href={site.contact.phoneHref}
                 className="inline-flex items-center justify-center gap-2 border-2 border-cream/30 hover:border-copper hover:text-copper text-cream px-8 py-4 rounded text-base font-bold tracking-wide transition-all"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                (847) 468-8810
+                {site.contact.phone}
               </a>
             </div>
           </AnimatedSection>
@@ -589,7 +615,7 @@ export default function Home() {
             {/* Map placeholder / address card */}
             <AnimatedSection animation="animate-slide-in-left">
               <a
-                href="https://www.google.com/maps/search/219+E+Chicago+St+Elgin+IL"
+                href={site.address.mapsDirections}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block relative rounded-xl overflow-hidden shadow-lg group h-full min-h-[260px] bg-navy"
@@ -599,9 +625,9 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <h3 className="text-cream text-2xl font-bold mb-2">219 E Chicago St</h3>
-                  <p className="text-cream/70 text-lg mb-1">Elgin, IL 60120</p>
-                  <p className="text-copper font-bold text-lg mt-1">(847) 468-8810</p>
+                  <h3 className="text-cream text-2xl font-bold mb-2">{site.address.street}</h3>
+                  <p className="text-cream/70 text-lg mb-1">{site.address.city}, {site.address.region} {site.address.postalCode}</p>
+                  <p className="text-copper font-bold text-lg mt-1">{site.contact.phone}</p>
                   <span className="mt-5 inline-block border border-copper/50 text-copper text-sm font-semibold uppercase tracking-wider px-4 py-2 rounded-full group-hover:bg-copper group-hover:text-cream transition-all">
                     Get Directions →
                   </span>
@@ -618,16 +644,16 @@ export default function Home() {
                   </h3>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center pb-4 border-b border-cream/10">
-                      <span className="text-cream font-semibold text-lg">Monday – Sunday</span>
-                      <span className="text-copper font-bold text-lg">11 AM – 1 AM</span>
+                      <span className="text-cream font-semibold text-lg">Sunday – Thursday</span>
+                      <span className="text-copper font-bold text-lg">{site.hours.sundayThursday}</span>
                     </div>
                     <div className="flex justify-between items-center pb-4 border-b border-cream/10">
-                      <span className="text-cream/70">Kitchen Hours</span>
-                      <span className="text-cream font-medium">Until Midnight</span>
+                      <span className="text-cream/70">Friday – Saturday</span>
+                      <span className="text-cream font-medium">{site.hours.fridaySaturday}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-cream/70">Bar</span>
-                      <span className="text-cream font-medium">Until Close</span>
+                      <span className="text-cream/70">Kitchen</span>
+                      <span className="text-cream font-medium">Until Midnight</span>
                     </div>
                   </div>
                 </div>
@@ -645,18 +671,16 @@ export default function Home() {
 
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
                   <a
-                    href="tel:8474688810"
+                    href={site.contact.phoneHref}
                     className="flex-1 bg-copper hover:bg-copper-light text-cream text-center px-6 py-3.5 rounded font-bold tracking-wide transition-all text-sm"
                   >
-                    Call (847) 468-8810
+                    Call {site.contact.phone}
                   </a>
                   <a
-                    href="https://www.facebook.com/eph219"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/private-events"
                     className="flex-1 border-2 border-cream/20 hover:border-copper text-cream hover:text-copper text-center px-6 py-3.5 rounded font-bold tracking-wide transition-all text-sm"
                   >
-                    Follow on Facebook
+                    Private Events
                   </a>
                 </div>
               </div>
@@ -671,19 +695,19 @@ export default function Home() {
           <AnimatedSection animation="animate-fade-up">
             <p className="text-copper text-sm tracking-[0.25em] uppercase mb-3 font-semibold">Can&apos;t Make It In?</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-cream mb-4">Order Online</h2>
-            <p className="text-cream/60 text-base mb-8 max-w-lg mx-auto">Get EPH delivered or order ahead for pickup — same great food, wherever you are.</p>
+            <p className="text-cream/60 text-base mb-8 max-w-lg mx-auto">Keep first-party takeout visible, then layer delivery apps underneath it.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://www.doordash.com/store/elgin-public-house-elgin-30957950/" target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#FF3008] hover:bg-red-600 text-white px-8 py-4 rounded text-base font-bold tracking-wide transition-all hover:-translate-y-0.5">
-                🚗 Order on DoorDash
+              <a href={site.links.toast} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-copper hover:bg-copper-light text-cream px-8 py-4 rounded text-base font-bold tracking-wide transition-all hover:-translate-y-0.5">
+                🥡 Order Direct on Toast
               </a>
-              <a href="https://www.ubereats.com/store/elgin-public-house/HYzSa6QXXyaaOYM--xPAng" target="_blank" rel="noopener noreferrer"
+              <a href={site.links.uberEats} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-[#06C167] hover:bg-green-600 text-white px-8 py-4 rounded text-base font-bold tracking-wide transition-all hover:-translate-y-0.5">
                 🛵 Order on Uber Eats
               </a>
-              <a href="https://order.toasttab.com/online/elgin-public-house-toast-now-219-e-chicago-st" target="_blank" rel="noopener noreferrer"
+              <a href={site.links.doorDash} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 border-2 border-copper/40 hover:border-copper text-cream hover:text-copper px-8 py-4 rounded text-base font-bold tracking-wide transition-all">
-                🥡 Order Direct (Toast)
+                🚗 Order on DoorDash
               </a>
             </div>
           </AnimatedSection>
@@ -696,14 +720,14 @@ export default function Home() {
           <AnimatedSection className="text-center mb-12">
             <p className="text-copper text-sm tracking-[0.25em] uppercase mb-3 font-semibold">What&apos;s On</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-cream mb-4">Events &amp; Weekly Specials</h2>
-            <p className="text-cream/60 text-base max-w-xl mx-auto">Something happening every night of the week at EPH.</p>
+            <p className="text-cream/60 text-base max-w-xl mx-auto">Built around the real Facebook/event rhythm and the upstairs room, not filler nightlife copy.</p>
           </AnimatedSection>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { day: "Monday", title: "Monday Night Football", desc: "Watch the game with $4 domestics and half-price wings all night long.", emoji: "🏈" },
-              { day: "Tuesday", title: "Taco Tuesday", desc: "Street tacos, margarita specials, and the best Tuesday in Elgin — period.", emoji: "🌮" },
-              { day: "Thursday", title: "Trivia Night", desc: "Test your knowledge at 7 PM. Win bar tabs, bragging rights, and glory.", emoji: "🧠" },
-              { day: "Weekly", title: "Live Music", desc: "Local bands and acoustic sets on select weekends. Check Facebook for lineup.", emoji: "🎸" },
+              { day: "Tonight", title: "Kitchen 'til Midnight", desc: "Keep the late-night dining hook visible above the fold and again near close so the owner sees the money angle.", emoji: "🕛" },
+              { day: "Upstairs", title: "Pub 217 Events", desc: "Private dinners, office gatherings, and party nights are surfaced as a real booking path with downloadable pricing.", emoji: "🥂" },
+              { day: "Direct", title: "Toast First", desc: "Pickup ordering now leads with the commission-free Toast flow before marketplace apps.", emoji: "🥡" },
+              { day: "Weekly", title: "Facebook Updates", desc: "Use the live Facebook feed for specials and event reminders instead of hard-coding offers that can drift out of date.", emoji: "📣" },
             ].map((e) => (
               <AnimatedSection key={e.day} animation="animate-fade-up">
                 <div className="bg-navy rounded-xl p-6 border border-copper/15 h-full">
@@ -719,15 +743,8 @@ export default function Home() {
       </section>
 
       {/* ── FINAL CTA ── */}
-      <section className="relative py-20 sm:py-28 overflow-hidden">
-        <div
-          className="parallax-hero absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&q=80')",
-          }}
-        />
-        <div className="absolute inset-0 bg-navy/85" />
+      <section className="relative py-20 sm:py-28 overflow-hidden bg-navy">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(203,144,87,0.2),_transparent_30%),linear-gradient(180deg,_rgba(203,144,87,0.08),_transparent_55%)]" />
         <div className="relative z-10 mx-auto max-w-3xl px-4 text-center">
           <AnimatedSection>
             <p className="text-copper text-sm tracking-[0.25em] uppercase mb-4 font-semibold">
@@ -739,25 +756,25 @@ export default function Home() {
               <span className="text-copper">Eat Something Great.</span>
             </h2>
             <p className="text-cream/60 text-base sm:text-lg mb-10">
-              Open daily 11 AM – 1 AM. Kitchen &apos;til midnight. Walk-ins always welcome.
+              Sun-Thu {site.hours.sundayThursday}. Fri-Sat {site.hours.fridaySaturday}. Kitchen &apos;til midnight.
               <br className="hidden sm:block" />
-              219 E Chicago St, Elgin, IL · <a href="tel:8474688810" className="text-copper hover:text-copper-light transition-colors">(847) 468-8810</a>
+              {site.address.street}, {site.address.city}, {site.address.region} · <a href={site.contact.phoneHref} className="text-copper hover:text-copper-light transition-colors">{site.contact.phone}</a>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/menu"
-                className="bg-copper hover:bg-copper-light text-cream px-10 py-4 rounded text-base font-bold tracking-wide transition-all hover:shadow-xl hover:shadow-copper/30 hover:-translate-y-0.5"
-              >
-                View Our Menu
-              </Link>
               <a
-                href="https://www.google.com/maps/search/219+E+Chicago+St+Elgin+IL"
+                href={site.links.toast}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="bg-copper hover:bg-copper-light text-cream px-10 py-4 rounded text-base font-bold tracking-wide transition-all hover:shadow-xl hover:shadow-copper/30 hover:-translate-y-0.5"
+              >
+                Order Direct on Toast
+              </a>
+              <Link
+                href="/private-events"
                 className="border-2 border-cream/30 hover:border-copper hover:text-copper text-cream px-10 py-4 rounded text-base font-bold tracking-wide transition-all"
               >
-                Get Directions
-              </a>
+                Private Events
+              </Link>
             </div>
           </AnimatedSection>
         </div>
