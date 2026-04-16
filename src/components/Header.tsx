@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/menu", label: "Menu" },
+  { href: "/private-events", label: "Private Events" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -21,10 +22,6 @@ export default function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
 
   return (
     <header
@@ -116,6 +113,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={() => setIsOpen(false)}
                 className={`px-3 py-2.5 rounded text-sm tracking-wide uppercase transition-colors ${
                   pathname === link.href
                     ? "text-copper bg-cream/5"

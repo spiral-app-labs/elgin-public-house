@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import AnimatedSection from "@/components/AnimatedSection";
+import { site } from "@/lib/site";
 
 type MenuItem = {
   name: string;
@@ -87,7 +88,7 @@ export default function MenuClient({ menuData }: { menuData: MenuData }) {
                           : ""
                       }`}
                     >
-                      {item.img && (
+                      {item.img && item.featured && (
                         <div className="relative overflow-hidden aspect-[16/10]">
                           <img
                             src={item.img}
@@ -133,23 +134,40 @@ export default function MenuClient({ menuData }: { menuData: MenuData }) {
             Hungry Yet?
           </h3>
           <p className="text-cream/60 text-sm sm:text-base mb-6">
-            Kitchen open &apos;til midnight, every night. Walk in or order
-            delivery.
+            Kitchen open &apos;til midnight, every night. Walk in, order direct,
+            or plan an upstairs gathering.
+          </p>
+          <p className="text-copper/80 text-xs uppercase tracking-[0.24em] mb-6">
+            Highlighted prices pulled from the current direct-order Toast menu
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:8474688810"
+              href={site.contact.phoneHref}
               className="bg-copper hover:bg-copper-light text-cream px-8 py-3.5 rounded text-sm font-semibold tracking-wide transition-all"
             >
               Call to Order
             </a>
             <a
-              href="https://www.ubereats.com/store/elgin-public-house/rIZ-rYlNTjygkE4VfUyv7g"
+              href={site.links.toast}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-2 border-copper/40 hover:border-copper text-copper px-8 py-3.5 rounded text-sm font-semibold tracking-wide transition-all"
+            >
+              Order Direct on Toast
+            </a>
+            <a
+              href={site.links.uberEats}
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 border-cream/30 hover:border-cream/60 text-cream px-8 py-3.5 rounded text-sm font-semibold tracking-wide transition-all"
             >
               Order on Uber Eats
+            </a>
+            <a
+              href="/private-events"
+              className="border-2 border-cream/30 hover:border-cream/60 text-cream px-8 py-3.5 rounded text-sm font-semibold tracking-wide transition-all"
+            >
+              Private Events
             </a>
           </div>
         </div>
